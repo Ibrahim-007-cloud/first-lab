@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+             IBRAHIM 2504521
+        </title>
+
+
+    </head>
+    <body>
+        <script>const promiseOne = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("Profile loaded in 1 second");
+  }, 1000);
+});
+
+const promiseTwo = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("Posts loaded in 3 seconds");
+  }, 3000);
+});
+
+Promise.race([promiseOne, promiseTwo])
+  .then((result) => {
+    console.log("Winner:", result);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+  </script>
+  </body>
+  </html>

@@ -1,0 +1,27 @@
+
+<html>
+<head>
+ 
+  <title>ibrahim</title>
+</head>
+<body>
+  <script>
+
+    const buffer = new ArrayBuffer(16);
+
+  
+    const uint8 = new Uint8Array(buffer);
+    for (let i = 0; i < uint8.length; i++) {
+      uint8[i] = i + 65;
+    }
+
+    console.log("Uint8Array contents:", uint8);
+
+   
+    const decoder = new TextDecoder();
+    const decoded = decoder.decode(buffer);
+
+    console.log("Decoded string:", decoded);
+  </script>
+</body>
+</html>

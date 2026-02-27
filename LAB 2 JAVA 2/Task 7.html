@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+          Ibrahim 2504521
+        </title>
+
+
+    </head>
+    <body>
+        <script>
+function checkStatus(callback) {
+  setTimeout(() => {
+    callback("Status OK");
+  }, 2000);
+}
+
+function checkStatusPromise() {
+  return new Promise((resolve) => {
+    checkStatus((status) => {
+      resolve(status);
+    });
+  });
+}
+
+
+checkStatusPromise().then((result) => {
+  console.log(result); 
+});
+</script>
+    </body>
+</html>

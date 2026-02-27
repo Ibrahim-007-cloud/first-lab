@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+           IBRAHIM 2504521
+        </title>
+
+
+    </head>
+    <body>
+        <script>function downloadImage(url) {
+  return new Promise((resolve, reject) => {
+    console.log("Downloading image...");
+
+    setTimeout(() => {
+      const isSuccessful = true; 
+      if (isSuccessful) {
+        resolve(`Download successful: ${url}`);
+      } else {
+        reject("Error: Image download failed.");
+      }
+    }, 2000); 
+  });
+}
+
+
+const imageURL = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Lionel_Messi_20180626.jpg";
+
+downloadImage(imageURL)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+  </script>
+  </body></html>

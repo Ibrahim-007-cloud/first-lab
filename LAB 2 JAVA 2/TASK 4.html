@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+             IBRAHIM 2504521
+        </title>
+
+
+    </head>
+    <body>
+        <script>
+const fastPromise = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("Fast promise resolved in 1 second ✅");
+  }, 1000);
+});
+
+
+const slowPromise = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("Slow promise resolved in 3 seconds ");
+  }, 3000);
+});
+
+
+Promise.race([fastPromise, slowPromise])
+  .then((result) => {
+    console.log("Winner:", result);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+  </script></body></html>

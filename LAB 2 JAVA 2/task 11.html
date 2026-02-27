@@ -1,0 +1,42 @@
+
+<html >
+<head>
+ 
+  <title>ibrahim</title>
+</head>
+<body>
+  
+  <input type="text" id="messageInput" placeholder="Type your message">
+  <button id="sendBtn">Send</button>
+  <ul id="messages"></ul>
+
+  <script>
+    const socket = new WebSocket('ws://localhost:8080');
+
+    const messageInput = document.getElementById('messageInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const messagesList = document.getElementById('messages');
+
+    socket.addEventListener('open', () => {
+      console.log('Connected to WebSocket server');
+    });
+
+    socket.addEventListener('message', (event) => {
+      const li = document.createElement('li');
+      li.textContent = `Server: ${event.data}`;
+      messagesList.appendChild(li);
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const message = messageInput.value;
+      if (message) {
+        socket.send(message);
+        const li = document.createElement('li');
+        li.textContent = `You: ${message}`;
+        messagesList.appendChild(li);
+        messageInput.value = '';
+      }
+    });
+  </script>
+</body>
+</html>

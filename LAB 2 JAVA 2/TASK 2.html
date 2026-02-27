@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            Musa ghouri - 2502130
+        </title>
+
+
+    </head>
+    <body>
+        <script>function downloadImage(url) {
+  return new Promise((resolve, reject) => {
+    console.log("Starting download...");
+
+    setTimeout(() => {
+      const downloadSuccessful = true; // Change to false to simulate failure
+
+      if (downloadSuccessful) {
+        resolve(`Image downloaded successfully from ${url}`);
+      } else {
+        reject("Error: Failed to download the image.");
+      }
+    }, 2000); // 2 seconds
+  });
+}
+
+// Proper Messi image URL
+const messiImageURL = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Lionel_Messi_20180626.jpg";
+
+// Example usage
+downloadImage(messiImageURL)
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+        </script>
+    </body></html>
